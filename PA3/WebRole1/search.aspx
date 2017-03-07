@@ -50,19 +50,19 @@
                     }
                 });
 
-                $.getJSON('http://35.162.33.147/index.php?callback=?', 'playerSearch=' + query, function (res) {
-                    console.log(res);
-                });
-
                 $.ajax({
                     type: 'GET',
-                    url: "http://35.162.33.147/index.php",
-                    data: '{"playerSearch":"' + query + '"}',
+                    crossDomain: true,
+                    url: "http://35.162.33.147/api.php",
+                    data: {playerSearch: query},
                     contentType: 'application/json; charset=utf-8',
                     dataType: "jsonp",
                     success: function (data) {
-                        var obj = $.parseJSON(data.d);
+                        var obj = data[0];
                         console.log(obj);
+                        console.log(obj[4]);
+                        console.log(obj["Ast"]);
+                        console.log(obj["2"]);
                         //var table = "<table>";
                         //$.each(obj, function (index, value) {
                             //var dateOnly = value.Item3.split(' ');

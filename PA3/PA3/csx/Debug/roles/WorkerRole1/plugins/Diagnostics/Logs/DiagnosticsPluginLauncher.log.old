@@ -1,0 +1,20 @@
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] At least one other instance of the launcher is running. Will wait until they all finish
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Service running in Emulator Mode, will not wait/kill other instances of the launcher
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Emulator config file set to C:\Users\Ha\Desktop\344a4\PA3\PA3\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] DiagnosticsStoreRootPath set to: C:\Users\Ha\AppData\Local\dftmp\Resources\7267892b-ab7e-439e-8736-095811704bc3
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Loading config file: C:\Users\Ha\Desktop\344a4\PA3\PA3\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Config file to read: C:\Users\Ha\Desktop\344a4\PA3\PA3\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Emulator config file set to C:\Users\Ha\Desktop\344a4\PA3\PA3\csx\Debug\roles\WorkerRole1\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:08:47 PM] Found a DiagnosticsPlugin.exe. WadArguments: "C:\Users\Ha\Desktop\344a4\PA3\PA3\csx\Debug\roles\WebRole1\plugins\Diagnostics\DiagnosticsPlugin.exe" DiagnosticPlugin-ShutdownEvent DiagnosticPlugin-TotalShutdownEvent -wadVer1v5.
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:09:47 PM] Forcefully terminated DiagnosticsPlugin.exe process with pid 10952
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:09:47 PM] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:09:47 PM] Found a MonAgentHost.exe. WadArguments: "C:\Users\Ha\Desktop\344a4\PA3\PA3\csx\Debug\roles\WebRole1\plugins\Diagnostics\Monitor\x64\MonAgentHost.exe" -LocalPath "C:\Users\Ha\AppData\Local\dftmp\Resources\c8e79fd6-d52b-4e16-aeb1-e7f1c11402a0\WAD0105"  -ConfigFile "C:\Users\Ha\AppData\Local\dftmp\Resources\c8e79fd6-d52b-4e16-aeb1-e7f1c11402a0\WAD0105\Configuration\MaConfig.xml" -ShutDownEvent WADDM-ShutDown-982a0dbcb526468e98a85d9e23514000  -TotalShutDownEvent WADDM-TotalShutDown-982a0dbcb526468e98a85d9e23514000 -InitializedEvent WADM-StartUp-982a0dbcb526468e98a85d9e23514000 -parent 10952 -events -wadVer1v5 -UseProxyServer -XStoreAccounts WadAccount#true#devstoreaccount1#Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==#http://127.0.0.1:10002#http://127.0.0.1:10001#http://127.0.0.1:10000.
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:09:47 PM] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [3/7/2017 7:09:47 PM] Resetting DiagnosticPlugin
