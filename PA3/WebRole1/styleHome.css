@@ -3,20 +3,18 @@
     margin: 0;
 }
 
-table {
+.coll {
     border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
 }
 
-th {
+#urlTh {
     text-align: left;
     padding-top: 10px;
 }
 
 td {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
 }
 
 .tableUrl {
@@ -26,6 +24,10 @@ td {
 .tableDate {
     width: 10%;
     text-align: right;
+}
+
+.brdd {
+    border-bottom: 1px solid #ddd;
 }
 
 #topbar {
@@ -72,9 +74,26 @@ td {
     overflow: hidden;
 }
 
-#adspace {
+#sidebar {
     float: right;
     width: 30%;
-    overflow: hidden;
+}
+
+#nba {
+    padding-left: 100px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+#nbaName {
+    font-size: 20px;
+}
+
+#nbaTable {
+    margin-left: 50px;
+}
+
+#adspace {
+    
 }
 
