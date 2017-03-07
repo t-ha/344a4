@@ -1,0 +1,80 @@
+﻿body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    padding-top: 10px;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.tableUrl {
+    width: 90%;
+}
+
+.tableDate {
+    width: 10%;
+    text-align: right;
+}
+
+#topbar {
+    background-color: #ecf0f1;
+    padding: 20px;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+
+#queryBox {
+    margin-left: 20px;
+    font-size: 20px;
+    width: 50%;
+}
+
+#suggestions {
+    margin-left: 105px;
+    background-color: white;
+    width: 50%;
+}
+
+#search {
+    float: left;
+    width: 80%;
+}
+
+#navi {
+    float: right;
+    width: 20%;
+    overflow: hidden;
+}
+
+
+
+#mainContent {
+    margin: 0 auto;
+    padding-left: 115px;
+    padding-top: 20px;
+}
+
+#results {
+    float: left;
+    width: 70%;
+    overflow: hidden;
+}
+
+#adspace {
+    float: right;
+    width: 30%;
+    overflow: hidden;
+}
+
