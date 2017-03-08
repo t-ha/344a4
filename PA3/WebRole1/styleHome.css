@@ -40,13 +40,20 @@ td {
 #queryBox {
     margin-left: 20px;
     font-size: 20px;
-    width: 50%;
+    width: 800px;
 }
 
 #suggestions {
-    margin-left: 105px;
+    position: absolute;
+    left: 125px;
+    top: 54px;
     background-color: white;
-    width: 50%;
+    width: 804px;
+    font-size: 18px;
+}
+
+#suggestions table {
+    border: 1px solid #ddd;
 }
 
 #search {

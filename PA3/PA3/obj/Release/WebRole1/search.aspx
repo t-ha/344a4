@@ -21,7 +21,7 @@
                     dataType: "json",
                     success: function (data) {
                         var obj = $.parseJSON(data.d);
-                        var table = "<table>";
+                        var table = '<table class="coll">';
                         $.each(obj, function (index, value) {
                             table = table + "<tr><td>" + value + "</td></tr>";
                         });
@@ -38,18 +38,58 @@
                     dataType: "json",
                     success: function (data) {
                         var obj = $.parseJSON(data.d);
-                        var table = "<table>";
+                        var table = '<table class="coll">';
                         $.each(obj, function (index, value) {
                             var dateOnly = value.Item3.split(' ');
-                            table = table + '<tr><th>' + value.Item1 + "</th></tr>";
-                            table = table + '<tr><td class="tablUrl"><a href="' + value.Item2 + '">' + value.Item2 + "</a></td>";
-                            table = table + '<td class="tableDate">' + dateOnly[0] + "</td></tr>";
+                            table = table + '<tr><th id="urlTh">' + value.Item1 + "</th></tr>";
+                            table = table + '<tr><td class="tableUrl brdd"><a href="' + value.Item2 + '">' + value.Item2 + "</a></td>";
+                            table = table + '<td class="tableDate brdd">' + dateOnly[0] + "</td></tr>";
                         });
                         table = table + "</table>";
                         $("#results").html(table);
                     }
                 });
+
+                $.ajax({
+                    type: 'GET',
+                    crossDomain: true,
+                    url: "http://35.162.33.147/api.php",
+                    data: {playerSearch: query},
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: "jsonp",
+                    success: function (data) {
+                        var table = '<table id="nbaTable">';
+                        var obj = data[0];
+                        if (obj) {
+                            console.log(obj);
+                            var name = obj["Name"].split(' ');
+                            var headUrl = '"' + "https://nba-players.herokuapp.com/players/" + name[1] + '/' + name[0] + '"';
+                            table = table + '<tr><td><img src=' + headUrl + ' width="175" height="127"/></td></tr>';
+                            table = table + '<tr><th id="nbaName">' + obj["Name"] + '</th></tr>';
+                            table = table + '<tr><th>Team</th><td>' + obj["Team"] + '</td></tr>';
+                            table = table + '<tr><th>Points Per Game</th><td>' + obj["PPG"] + '</td></tr>';
+                            table = table + '<tr><th>FG Percentage</th><td>' + obj["FGPct"] + '%</td></tr>';
+                            table = table + '<tr><th>3Point Percentage</th><td>' + obj["3PTPct"] + '%</td></tr>';
+                            table = table + '<tr><th>Free Throw Percentage</th><td>' + obj["FTPct"] + '%</td></tr>';
+                            table = table + '<tr><th>Rebounds</th><td>' + obj["Tot"] + '</td></tr>';
+                            table = table + '<tr><th>Assists</th><td>' + obj["Ast"] + '</td></tr>';
+                            table = table + '<tr><th>Steals</th><td>' + obj["Stl"] + '</td></tr>';
+                            table = table + '<tr><th>Blocks</th><td>' + obj["Blk"] + '</td></tr>';
+                            table = table + '<tr><th>Turnovers</th><td>' + obj["TO"] + '</td></tr>';
+                        }
+                        table = table + "</table>";
+                        $("#nba").html(table);
+                    }
+                });
             });
+        });
+
+        $(document).click(function (event) {
+            if ($(event.target).is("#queryBox")) {
+                $("#suggestions").show();
+            } else if (!$("#suggestions").is(event.target) && $("#suggestions").has(event.target).length == 0) {
+                $("#suggestions").hide();
+            }
         });
 
 
@@ -71,6 +111,7 @@
                 "Google" <input id="queryBox" type="text"/>
                 <div id="suggestions"></div>
             </div>
+            
             <div id="navi">
                 <input type="button" onclick="location.href='/search.aspx';" value="Home" />
                 <input type="button" onclick="location.href='/dashboard.aspx';" value="Dashboard" />
@@ -80,8 +121,12 @@
         <div id="mainContent">
             <div id="results">
             </div>
-            <div id="adspace">
-                <script>PlaceAd();</script>
+            <div id="sidebar">
+                <div id="nba">
+                </div>
+                <div id="adspace">
+                    <script>PlaceAd();</script>
+                </div>
             </div>
         </div>
 </body>

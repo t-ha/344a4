@@ -39,7 +39,7 @@ namespace WorkerRole1
                 {
                     if (adminMsg.AsString == "load")
                     {
-                        spider = new Crawler("cnn.com", "bleacherreport.com", ic.urlQueue);
+                        spider = new Crawler("bleacherreport.com", "cnn.com", ic.urlQueue);
                         ic.statusQueue.AddMessage(new CloudQueueMessage("Loading complete"));
                     }
                     else if (adminMsg.AsString == "start")

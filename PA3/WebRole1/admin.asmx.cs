@@ -62,9 +62,7 @@ namespace WebRole1
             ic.statusQueue.AddMessage(new CloudQueueMessage("Idle and cleared"));
             ic.adminQueue.AddMessage(new CloudQueueMessage("clear"));
             ic.urlQueue.Clear();
-            ic.adminQueue.Clear();
             ic.errorQueue.Clear();
-            ic.statusQueue.Clear();
             ic.statsQueue.Clear();
             TableQuery<PageTitle> query = new TableQuery<PageTitle>()
                 .Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.NotEqual, "00"));
@@ -72,6 +70,8 @@ namespace WebRole1
             {
                 ic.titlesTable.Execute(TableOperation.Delete(entity));
             }
+            ic.adminQueue.Clear();
+            ic.statusQueue.Clear();
             return new JavaScriptSerializer().Serialize("All queues and tables cleared. Workers stopped.");
         }
 

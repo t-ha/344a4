@@ -13,22 +13,22 @@
         $(document).ready(function(){
             $("#queryBox").on("input", function () {
                 var query = this.value.trim();
-                //$.ajax({
-                //    type: 'POST',
-                //    url: "admin.asmx/SearchTrie",
-                //    data: '{"prefix":"' + query + '"}',
-                //    contentType: 'application/json; charset=utf-8',
-                //    dataType: "json",
-                //    success: function (data) {
-                //        var obj = $.parseJSON(data.d);
-                //        var table = '<table class="coll">';
-                //        $.each(obj, function (index, value) {
-                //            table = table + "<tr><td>" + value + "</td></tr>";
-                //        });
-                //        table = table + "</table>";
-                //        $("#suggestions").html(table);
-                //    }
-                //});
+                $.ajax({
+                    type: 'POST',
+                    url: "admin.asmx/SearchTrie",
+                    data: '{"prefix":"' + query + '"}',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: "json",
+                    success: function (data) {
+                        var obj = $.parseJSON(data.d);
+                        var table = '<table class="coll">';
+                        $.each(obj, function (index, value) {
+                            table = table + "<tr><td>" + value + "</td></tr>";
+                        });
+                        table = table + "</table>";
+                        $("#suggestions").html(table);
+                    }
+                });
 
                 $.ajax({
                     type: 'POST',
@@ -84,6 +84,14 @@
             });
         });
 
+        $(document).click(function (event) {
+            if ($(event.target).is("#queryBox")) {
+                $("#suggestions").show();
+            } else if (!$("#suggestions").is(event.target) && $("#suggestions").has(event.target).length == 0) {
+                $("#suggestions").hide();
+            }
+        });
+
 
 
         function PlaceAd() {
@@ -103,6 +111,7 @@
                 "Google" <input id="queryBox" type="text"/>
                 <div id="suggestions"></div>
             </div>
+            
             <div id="navi">
                 <input type="button" onclick="location.href='/search.aspx';" value="Home" />
                 <input type="button" onclick="location.href='/dashboard.aspx';" value="Dashboard" />
